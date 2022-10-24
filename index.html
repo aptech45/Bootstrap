@@ -8,7 +8,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.2/dist/index.bundle.min.js"></script>
-
+<style>
+    .showhide{
+display: none;
+    }
+</style>
 </head>
 <body>
     <div class="container">
@@ -23,8 +27,9 @@
                         </div>
                         <div class="card-text">
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, rerum! Sint autem aspernatur nemo expedita assumenda deserunt, ipsam tempora facilis earum quia ducimus. Necessitatibus sunt, minus tempore illo vitae molestiae.</p>
+                            <p class="showhide">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti officiis ullam dignissimos provident neque laborum eos, dolorum harum ut est! Rem assumenda est mollitia ullam dignissimos tempora alias? Consequuntur exercitationem vel ipsa! Aspernatur nihil temporibus animi nostrum aut laboriosam quis itaque dolorum rem libero vel et ipsam nam consequuntur quos, consequatur, saepe, omnis dicta recusandae. Ducimus rerum, maiores aut eos perspiciatis recusandae. Doloribus neque vel dolorum praesentium labore optio eius, animi sunt repellendus reiciendis, nemo perspiciatis maiores aliquam architecto similique! Accusantium libero possimus, quis non distinctio ex dolorum delectus sequi alias voluptate aliquam, dolor nisi et eaque, tempora perferendis ipsam!</p>
                         </div>
-                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal1">See Details</button>
+                        <button class="btn btn-primary" id="btn">See Details</button>
 
                     </div>
                 </div>
@@ -92,5 +97,23 @@
 
         </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script>
+       $(document).ready(function(){
+        $("#btn").click(function(){
+            if($("#btn").text()=="See Details")
+            {
+                $(".showhide").show();
+                $("#btn").text("See Less");
+            }
+            else
+            {
+                $(".showhide").hide();
+                $("#btn").text("See Details");
+            }
+
+        });
+       }) ;
+    </script>
 </body>
 </html>
